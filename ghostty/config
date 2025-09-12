@@ -1,0 +1,200 @@
+# Ghostty Configuration with Sema Syntax Highlighting Principles
+# Based on complexity-first highlighting philosophy
+# Target: ~/.config/ghostty/config
+
+# =============================================================================
+# SEMA LIGHT SOFT THEME COLORS
+# =============================================================================
+
+# Background and foreground
+background = ffffff
+foreground = 474747
+
+# Cursor
+cursor-color = 2e2e2e
+
+# Selection
+selection-background = bcbcbc
+selection-foreground = 474747
+
+# =============================================================================
+# ANSI COLORS - Following Sema Principles
+# =============================================================================
+
+# Black/Gray spectrum
+palette = 0=#dcdcdc
+palette = 8=#757575
+
+# Red - for errors, warnings, unsafe operations
+palette = 1=#bb7d72
+palette = 9=#bb7d72
+
+# Green - for strings, success, additions
+palette = 2=#667953
+palette = 10=#6a775e
+
+# Yellow - for types, classes, structs
+palette = 3=#757358
+palette = 11=#757358
+
+# Blue - CONTROL FLOW & INTERFACES (highest priority)
+palette = 4=#5898b7
+palette = 12=#5d7587
+
+# Magenta - for constants, numbers
+palette = 5=#866870
+palette = 13=#ab7da7
+
+# Cyan - for properties, enum members
+palette = 6=#6f6f89
+palette = 14=#6f6f89
+
+# White
+palette = 7=#474747
+palette = 15=#2e2e2e
+
+# =============================================================================
+# FONT CONFIGURATION
+# =============================================================================
+
+# Primary font - keeping your preferred font
+font-family = Monaspace Krypton
+font-size = 12
+
+# Font variations (if available)
+font-family-bold = Monaspace Krypton Bold
+font-family-italic = Monaspace Krypton Italic
+font-family-bold-italic = Monaspace Krypton Bold Italic
+
+# macOS font rendering
+font-thicken = true
+font-thicken-strength = 30
+
+# Disable ligatures per Sema principles (focus on actual code, not decoration)
+font-feature = -liga
+font-feature = -calt
+
+# Cell adjustments for better readability
+adjust-cell-height = 5%
+
+# =============================================================================
+# WINDOW APPEARANCE
+# =============================================================================
+
+# Window dimensions
+window-height = 35
+window-width = 120
+
+# Window padding (in pixels)
+window-padding-x = 8
+window-padding-y = 8
+
+# Window state persistence
+window-save-state = always
+
+# macOS-specific styling
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+
+# Transparency and effects
+background-opacity = 0.98
+background-blur = false
+
+# Color space for accurate colors
+window-colorspace = srgb
+
+# =============================================================================
+# TERMINAL BEHAVIOR
+# =============================================================================
+
+# Shell integration for better navigation
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
+
+# Clipboard settings
+clipboard-read = ask
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+clipboard-paste-protection = true
+copy-on-select = clipboard
+
+# Mouse behavior
+focus-follows-mouse = false
+mouse-hide-while-typing = true
+
+# Scrollback
+scrollback-limit = 10000
+
+# Bell (visual-bell not supported in Ghostty)
+
+# =============================================================================
+# KEYBINDINGS (macOS)
+# =============================================================================
+
+# Window management
+keybind = cmd+n=new_window
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+
+# Tab navigation
+keybind = cmd+shift+left=previous_tab
+keybind = cmd+shift+right=next_tab
+keybind = cmd+1=goto_tab:1
+keybind = cmd+2=goto_tab:2
+keybind = cmd+3=goto_tab:3
+keybind = cmd+4=goto_tab:4
+keybind = cmd+5=goto_tab:5
+keybind = cmd+6=goto_tab:6
+keybind = cmd+7=goto_tab:7
+keybind = cmd+8=goto_tab:8
+keybind = cmd+9=last_tab
+
+# Split management
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+
+# Font size control
+keybind = cmd+plus=increase_font_size:1
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+0=reset_font_size
+
+# Config reload
+keybind = cmd+r=reload_config
+
+# Quick terminal (dropdown)
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+# Navigation with shell integration
+keybind = cmd+up=jump_to_prompt:-1
+keybind = cmd+down=jump_to_prompt:1
+
+# =============================================================================
+# QUICK TERMINAL SETTINGS
+# =============================================================================
+
+quick-terminal-screen = main
+quick-terminal-position = top
+# quick-terminal-animation = true (not supported)
+quick-terminal-autohide = true
+
+# =============================================================================
+# SPLIT APPEARANCE
+# =============================================================================
+
+# Visual hints for complexity (unfocused splits are dimmed)
+unfocused-split-opacity = 0.85
+unfocused-split-fill = ffffff
+split-divider-color = bcbcbc
+
+# =============================================================================
+# PERFORMANCE OPTIMIZATIONS
+# =============================================================================
+
+# Disable unnecessary features for cleaner experience
+image-storage-limit = 0
+custom-shader-animation = false
+
+# Window chrome
+macos-titlebar-proxy-icon = visible
+# focus-events = true (not supported)
+window-vsync = true

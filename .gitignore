@@ -1,0 +1,81 @@
+# Sensitive files and credentials
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+*.key
+*.pem
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# SSH keys
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+*.ppk
+
+# API tokens and keys
+.api_key
+.api_keys
+.token
+.tokens
+*_token
+*_secret
+
+# Database credentials
+database.yml
+database.json
+db_config.*
+.pgpass
+
+# Cloud provider credentials
+.aws/credentials
+.aws/config
+.gcp/
+.azure/
+*.serviceaccount.json
+
+# Password files
+password.*
+passwd.*
+*.pass
+
+# Private configuration
+private/
+.private/
+*.private
+*.secret
+
+# Backup files that might contain sensitive data
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs that might contain sensitive info
+*.log
+logs/
+*.err
+*.error
