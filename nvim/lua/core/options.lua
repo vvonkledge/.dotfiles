@@ -17,8 +17,14 @@ opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 
--- Line wrapping
-opt.wrap = false
+-- Line wrapping and text width
+opt.wrap = true
+opt.textwidth = 80
+opt.colorcolumn = "80"
+opt.linebreak = true
+opt.breakindent = true
+opt.formatoptions:append("t")  -- Auto-wrap text using textwidth
+opt.formatoptions:append("c")  -- Auto-wrap comments using textwidth
 
 -- Search settings
 opt.ignorecase = true
@@ -32,6 +38,10 @@ opt.signcolumn = "yes"
 opt.cursorline = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
+
+-- Italic text support in terminal
+vim.g.t_ZH = "\x1b[3m"
+vim.g.t_ZR = "\x1b[23m"
 
 -- Backspace
 opt.backspace = "indent,eol,start"

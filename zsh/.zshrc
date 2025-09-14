@@ -84,3 +84,7 @@ edusign_prod() {
 }
 
 export GPG_TTY=$(tty)
+
+# Create symlink to Claude PRPs directory
+alias prps='cp -r ~/workspaces/dotfiles/claude/PRPs ./PRPs'
+

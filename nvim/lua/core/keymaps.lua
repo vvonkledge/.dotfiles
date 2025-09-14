@@ -52,3 +52,8 @@ keymap("n", "<leader>wq", "<cmd>wq<CR>", { desc = "Save and quit" })
 -- Better indenting
 keymap("v", "<", "<gv", { desc = "Indent left" })
 keymap("v", ">", ">gv", { desc = "Indent right" })
+
+-- Text formatting
+keymap("n", "<leader>gq", "gqap", { desc = "Format paragraph to 80 chars" })
+keymap("v", "<leader>gq", "gq", { desc = "Format selection to 80 chars" })
+keymap("n", "<leader>gQ", "ggVGgq", { desc = "Format entire file to 80 chars" })

@@ -8,6 +8,12 @@ setopt PROMPT_SUBST
 
 # Git status function - only show when in repo with changes
 git_prompt_info() {
+    # Check if in a bare repository (production indicator)
+    if git rev-parse --is-bare-repository 2>/dev/null | grep -q true; then
+        echo " %F{red}[PRODUCTION]%f"
+        return
+    fi
+    
     # Exit if not in git repo
     git rev-parse --is-inside-work-tree &>/dev/null || return
     
@@ -108,7 +114,7 @@ add-zsh-hook preexec prompt_preexec
 add-zsh-hook precmd prompt_precmd
 
 # Minimal color scheme - only for complexity indicators
-# Red: errors, root user
+# Red: errors, root user, bare repositories (production)
 # Yellow: deep directories  
 # Cyan: background jobs
 # Magenta: SSH sessions
